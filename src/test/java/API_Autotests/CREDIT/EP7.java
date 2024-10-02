@@ -60,7 +60,7 @@ public class EP7 {
     }
 
     //проверка EP c неправильным URL
-    @Test(priority = 5)
+    @Test(priority = 6)
     public void getDocumentList404() {
         Response response = given().header("Content-Type", "application/json")
                 .header("Authorization", "Bearer "+ token)
@@ -70,7 +70,7 @@ public class EP7 {
     }
 
     //проверка EP с просроченным токеном (время жизни токена 5 минут)
-    @Test(priority = 6)
+    @Test(priority = 7)
     public void getDocumentList403ExpiredToken() throws InterruptedException {
         TimeUnit.MINUTES.sleep(5);
         Response response = given().header("Content-Type", "application/json")
